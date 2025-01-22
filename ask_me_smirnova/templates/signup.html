@@ -1,0 +1,22 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block user %}
+{% load bootstrap5 %}
+{% include 'layouts/unregistered_user.html' %}
+{% endblock %}
+{% block content %}
+<div class="row">
+    <div class="col-9">
+        <h1 class="text-info-emphasis">Sign Up</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="d-flex flex-column gap-3">
+                {% bootstrap_form form %}
+                <div class="col-sm-7">
+                    <button class="btn btn-outline-info" type="submit">Sign up!</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

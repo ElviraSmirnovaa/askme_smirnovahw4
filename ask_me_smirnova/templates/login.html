@@ -1,0 +1,19 @@
+{% extends 'layouts/base.html' %}
+{% load bootstrap5 %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-9">
+        <h1 class="text-info-emphasis">Log in</h1>
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+
+            {% bootstrap_form form %}
+            {% buttons %}
+            <button type="submit" class="btn btn-success">Submit</button>
+            {% endbuttons %}
+        </form>
+        <a href="{% url 'signup' %}" class="d-block">create new account</a>
+    </div>
+</div>
+{% endblock %}
